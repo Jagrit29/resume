@@ -3,23 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Jagrit's Resume - 2024</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 40px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .download-btn {
+            background-color: white;
+            color: #007BFF;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .content {
+            padding: 40px;
         }
         iframe {
             width: 100%;
             height: 800px;
             border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <h1>My Resume</h1>
-    <iframe src="JagritResumeFY24.pdf" frameborder="0"></iframe>
-    <p><a href="JagritResumeFY24.pdf" download>Download Resume</a></p>
+    <div class="header">
+        <h1>My Resume</h1>
+        <a href="resume.pdf" class="download-btn" download>Download</a>
+    </div>
+    <div class="content">
+        <iframe src="resume.pdf" frameborder="0"></iframe>
+    </div>
 </body>
 </html>
