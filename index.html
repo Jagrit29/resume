@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jagrit's Resume - 2024</title>
+    <title>Jagrit's Resume</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-mode {
             background-color: #f4f4f4;
             color: #333;
         }
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+        }
         .header {
-            background-color: #007BFF;
-            color: white;
             padding: 20px 40px;
             position: relative;
             display: flex;
@@ -25,10 +30,22 @@
             margin: 0;
             font-size: 24px;
         }
+        .toggle-btn {
+            background-color: transparent;
+            border: 2px solid currentColor;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: currentColor;
+            color: #fff;
+        }
         .download-btn {
-            background-color: white;
-            color: #007BFF;
-            border: 2px solid white;
+            background-color: #007BFF;
+            color: white;
+            border: none;
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -37,7 +54,6 @@
         }
         .download-btn:hover {
             background-color: #0056b3;
-            color: white;
         }
         .content {
             padding: 40px;
@@ -48,15 +64,37 @@
             border: 1px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .thank-you {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
     </style>
 </head>
-<body>
+<body class="light-mode">
     <div class="header">
-        <h1>Jagrit's Resume</h1>
-        <a href="resume.pdf" class="download-btn" download>Download</a>
+        <h1>My Resume</h1>
+        <div>
+            <button class="toggle-btn" onclick="toggleMode()">Switch to Dark Mode</button>
+            <a href="resume.pdf" class="download-btn" download>Download</a>
+        </div>
     </div>
     <div class="content">
         <iframe src="resume.pdf" frameborder="0"></iframe>
+        <p class="thank-you">Thank you for visiting!</p>
     </div>
+    <script>
+        function toggleMode() {
+            var body = document.body;
+            var btn = document.querySelector('.toggle-btn');
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('dark-mode')) {
+                btn.textContent = 'Switch to Light Mode';
+            } else {
+                btn.textContent = 'Switch to Dark Mode';
+            }
+        }
+    </script>
 </body>
 </html>
